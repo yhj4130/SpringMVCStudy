@@ -1,0 +1,33 @@
+SELECT USER
+FROM DUAL;
+--==>> SCOTT
+
+DROP TABLE TBL_MEMBERLIST;
+--==>> Table TBL_MEMBERLIST이(가) 삭제되었습니다.
+
+CREATE TABLE TBL_MEMBERLIST
+( ID    VARCHAR2(30)
+, PW    VARCHAR2(20)
+, NAME  VARCHAR2(50)
+, TEL   VARCHAR2(50)
+, EMAIL VARCHAR2(100)
+, CONSTRAINT MEMBERLIST_ID_PF PRIMARY KEY(ID)
+);
+--==>> Table TBL_MEMBERLIST이(가) 생성되었습니다.
+
+--○ 데이터 입력
+INSERT INTO TBL_MEMBERLIST(ID, PW, NAME, TEL, EMAIL) VALUES('admin', CRYPTPACK.ENCRYPT('java006$','java006$'), '한승원', '010-4143-4045', 'han0401@naver.com');
+--> 한 줄 구성
+INSERT INTO TBL_MEMBERLIST(ID, PW, NAME, TEL, EMAIL) VALUES('admin', CRYPTPACK.ENCRYPT('java006$','java006$'), '한승원', '010-4143-4045', 'han0401@naver.com')
+;
+--==>> 1 행 이(가) 삽입되었습니다.
+
+
+--○ 확인
+SELECT ID, NAME, TEL, EMAIL
+FROM TBL_MEMBERLIST;
+
+
+--○ 커밋
+COMMIT;
+--==>> 커밋 완료.

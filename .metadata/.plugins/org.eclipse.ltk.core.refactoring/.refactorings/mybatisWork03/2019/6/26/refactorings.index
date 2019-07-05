@@ -1,0 +1,17 @@
+1561597761710	Rename resource 'memberlist.action'
+1561597767649	Delete element
+1561597831090	Rename resource 'MemberList.jsp'
+1561597867542	Rename type 'MemberDTO'
+1561598400331	Rename type 'IMemberDAO'
+1561598455583	Copy compilation unit
+1561598504456	Rename resource 'MemberDAO.xml'
+1561598847687	Copy file
+1561599126594	Delete element
+1561599129606	Delete element
+1561599192415	Copy compilation unit
+1561600183767	Rename resource 'MemberInsertForm.jsp'
+1561601217690	Copy file
+1561603020633	Copy file
+1561604385861	Copy file
+1561684654630	Rename resource 'StudentList.jsp'
+1561684659879	Move 'StudentList.jsp' to 'views'

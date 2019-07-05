@@ -1,0 +1,10 @@
+package com.test.mybatis;
+
+public class Snippet
+{
+	public static void main(String[] args)
+	{
+		MemberDTO
+	}
+}
+

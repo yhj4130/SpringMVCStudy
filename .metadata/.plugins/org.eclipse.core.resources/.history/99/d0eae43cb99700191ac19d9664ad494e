@@ -1,0 +1,17 @@
+/*==================
+   Sample.java
+   - 컨트롤러 객체
+==================*/
+
+package com.test.mybatis;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class Sample
+{
+	public String hello(Model model)
+	{
+		
+	}
+}

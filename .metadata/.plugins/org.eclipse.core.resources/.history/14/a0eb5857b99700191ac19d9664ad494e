@@ -1,0 +1,20 @@
+/*==================
+   Sample.java
+   - 컨트롤러 객체
+==================*/
+
+package com.test.mybatis;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class Sample
+{
+	@RequestMapping
+	public String hello(Model model)
+	{
+		
+	}
+}

@@ -1,0 +1,12 @@
+/*==================================
+   MemberDTO.java
+   - 데이터 저장 및 전송 전용 객체
+==================================*/
+
+package com.test.mybatis;
+
+public class StudentDTO
+{
+	private int sid, sub, sub1, sub2, sub3, tot, avg, ch;
+	
+}

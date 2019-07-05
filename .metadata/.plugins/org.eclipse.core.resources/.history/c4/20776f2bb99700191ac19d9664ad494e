@@ -1,0 +1,11 @@
+/*==================
+   Sample.java
+   - 컨트롤러 객체
+==================*/
+
+package com.test.mybatis;
+
+public class Sample
+{
+
+}

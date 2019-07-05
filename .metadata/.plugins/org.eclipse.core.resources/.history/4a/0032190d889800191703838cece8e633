@@ -1,0 +1,103 @@
+/*===================
+   MemberMain.java
+   - 컨트롤러
+===================*/
+
+package com.test.mybatis;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+public class StudentController
+{
+	// mybatis 객체 의존성 (자동) 주입 !
+	@Autowired
+	private SqlSession sqlSession;
+	
+	@RequestMapping(value="/studentlist.action", method=RequestMethod.GET)
+	public String studentList(ModelMap model)
+	{
+		IStudentDAO dao = sqlSession.getMapper(IStudentDAO.class);
+		
+		model.addAttribute("count", dao.count());
+		model.addAttribute("list", dao.list());
+		
+		return "WEB-INF/views/StudentList.jsp";
+	}
+	
+	@RequestMapping(value="/studentinsertform.action", method=RequestMethod.GET)
+	public String studentInsertForm(StudentDTO dto) 
+	{ 
+	    return "WEB-INF/views/StudentInsertForm.jsp"; 
+	}
+	
+	@RequestMapping(value="/studentinsert.action", method=RequestMethod.POST)
+	public String studentInsert(StudentDTO dto) 
+	{ 
+		IStudentDAO dao = sqlSession.getMapper(IStudentDAO.class);
+		
+		dao.add(dto);
+		
+		return "redirect:studentlist.action";
+	}
+	
+	@RequestMapping(value="/studentdelete.action", method=RequestMethod.GET)
+	public String studentDelete(StudentDTO dto) 
+	{ 
+		IStudentDAO dao = sqlSession.getMapper(IStudentDAO.class);
+	  
+	    dao.remove(dto);
+	  
+	    return "redirect:studentlist.action"; 
+	}
+	
+	@RequestMapping(value="/studentupdateform.action", method=RequestMethod.GET)
+	public String studentUpdateForm(ModelMap model, StudentDTO dto) 
+	{ 
+		IStudentDAO dao = sqlSession.getMapper(IStudentDAO.class);
+		
+		dao.search(dto);
+	
+		model.addAttribute("search", dao.search(dto));
+		
+		return "WEB-INF/views/StudentUpdateForm.jsp"; 
+	}
+	
+	@RequestMapping(value="/studentupdate.action", method=RequestMethod.POST)
+	public String studentUpdate(StudentDTO dto) 
+	{ 
+		IStudentDAO dao = sqlSession.getMapper(IStudentDAO.class);
+		
+		dao.update(dto);
+		
+		return "redirect:studentlist.action"; 
+	}
+	 
+	@RequestMapping(value="/gradelist.action", method=RequestMethod.GET)
+	public String gradeList(ModelMap model)
+	{
+		IGradeDAO dao = sqlSession.getMapper(IGradeDAO.class);
+		
+		model.addAttribute("count", dao.count());
+		model.addAttribute("list", dao.list());
+		
+		return "WEB-INF/views/GradeList.jsp";
+	}
+	
+	@RequestMapping(value="/gradeinsertform.action", method=RequestMethod.GET)
+	public String gradeInsertForm(ModelMap model, StudentDTO dto) 
+	{ 
+		IStudentDAO dao = sqlSession.getMapper(IStudentDAO.class);
+		
+		dao.search(dto);
+	
+		model.addAttribute("search", dao.search(dto));
+		
+		return "WEB-INF/views/StudentUpdateForm.jsp"; 
+	}
+}

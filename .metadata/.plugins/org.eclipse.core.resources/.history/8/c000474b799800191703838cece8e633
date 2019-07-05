@@ -1,0 +1,9 @@
+package com.test.mybatis;
+
+public class GradeDTO
+{
+	private int sub1, sub2, sub3, tot, avg;
+	private String ch;
+	
+	
+}

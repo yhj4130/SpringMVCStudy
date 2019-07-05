@@ -1,0 +1,10 @@
+/*====================
+	ISample.java
+====================*/
+
+package com.test.mybatis;
+
+public interface ISample
+{
+	
+}

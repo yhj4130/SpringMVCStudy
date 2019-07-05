@@ -1,0 +1,35 @@
+/*===================
+   MemberMain.java
+   - 컨트롤러
+===================*/
+
+package com.test.mybatis;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+
+@Controller
+public class MemberMain
+{
+	// mybatis 객체 의존성 (자동) 주입 !
+	@Autowired
+	private SqlSession sqlSession;
+	
+	public String memberList(ModelMap model)
+	{
+		return "WEB-INF/views/MemberList.jsp";
+	}
+	
+	public String memberInsert(MemberDTO dto)
+	{
+		return "WEB-INF/views/MemberList.jsp";
+	}
+	
+	
+	public String memberDelete(MemberDTO dto)
+	{
+		
+	}
+}

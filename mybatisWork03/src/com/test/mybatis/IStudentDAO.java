@@ -1,0 +1,18 @@
+/*==================
+   IMemberDAO.java
+   - 인터페이스
+==================*/
+
+package com.test.mybatis;
+
+import java.util.ArrayList;
+
+public interface IStudentDAO
+{
+	public int add(StudentDTO dto);
+	public int count();
+	public ArrayList<StudentDTO> list();
+	public int remove(StudentDTO dto);
+	public int update(StudentDTO dto);
+	public StudentDTO search(StudentDTO dto);
+}
